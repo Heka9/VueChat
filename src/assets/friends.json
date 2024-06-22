@@ -83,26 +83,6 @@
         {
           "myMsg": "By",
           "answer": "You By"
-        },
-        {
-          "myMsg": "Hello",
-          "answer": "You Hello"
-        },
-        {
-          "myMsg": "What's up",
-          "answer": "You What's up"
-        },
-        {
-          "myMsg": "Give me money",
-          "answer": "You Give me money"
-        },
-        {
-          "myMsg": "Bla-bla-bla",
-          "answer": "You Bla-bla-bla"
-        },
-        {
-          "myMsg": "By",
-          "answer": "You By"
         }
       ]
     }
