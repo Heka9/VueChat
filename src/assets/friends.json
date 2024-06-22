@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Ivan",
+    "messages": {
+      "quantity": 2,
+      "history": [
+        {
+          "myMsg": "Hello",
+          "answer": "You Hello"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Max",
+    "messages": {
+      "quantity": 4,
+      "history": [
+        {
+          "myMsg": "Hello",
+          "answer": "You Hello"
+        },
+        {
+          "myMsg": "What's up",
+          "answer": "You What's up"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Jack",
+    "messages": {
+      "quantity": 0,
+      "history": []
+    }
+  },
+  {
+    "id": 4,
+    "name": "Helen",
+    "messages": {
+      "quantity": 6,
+      "history": [
+        {
+          "myMsg": "Hello",
+          "answer": "You Hello"
+        },
+        {
+          "myMsg": "What's up",
+          "answer": "You What's up"
+        },
+        {
+          "myMsg": "By",
+          "answer": "You By"
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Kate",
+    "messages": {
+      "quantity": 10,
+      "history": [
+        {
+          "myMsg": "Hello",
+          "answer": "You Hello"
+        },
+        {
+          "myMsg": "What's up",
+          "answer": "You What's up"
+        },
+        {
+          "myMsg": "Give me money",
+          "answer": "You Give me money"
+        },
+        {
+          "myMsg": "Bla-bla-bla",
+          "answer": "You Bla-bla-bla"
+        },
+        {
+          "myMsg": "By",
+          "answer": "You By"
+        },
+        {
+          "myMsg": "Hello",
+          "answer": "You Hello"
+        },
+        {
+          "myMsg": "What's up",
+          "answer": "You What's up"
+        },
+        {
+          "myMsg": "Give me money",
+          "answer": "You Give me money"
+        },
+        {
+          "myMsg": "Bla-bla-bla",
+          "answer": "You Bla-bla-bla"
+        },
+        {
+          "myMsg": "By",
+          "answer": "You By"
+        }
+      ]
+    }
+  }
+]
