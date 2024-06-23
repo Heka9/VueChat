@@ -1,7 +1,7 @@
 <script setup>
 import { inject, ref } from 'vue'
 import SearchFriendPanel from '@/components/search-friend-panel.vue'
-import SearchFriendList from '@/components/search-friend-list.vue'
+import SearchFriendList from '@/components/search-friend-list-item.vue'
 import friendListData from '@/assets/friends.json'
 import MessagesBlock from '@/components/messages-block.vue'
 
@@ -17,24 +17,30 @@ const onSearchFriend = (value) => {
   )
 }
 
-const onFriendClick = (friendId) => {
-  chosenFriend.value = friendList.value.find((friend) => friend.id === friendId)
-}
+
 
 const onChangeAvatarImage = (e) => {
-  const newAvatarImage = e.target.files[0].name
-  updateCurrentUserData(currentUser.nickName, currentUser.password, newAvatarImage)
+  // const newAvatarImage = e.target.files[0].name
+  // updateCurrentUserData(currentUser.nickName, currentUser.password, newAvatarImage)
+  const updatedUser = {
+    ...currentUser,
+    imageUrl: e.target.files[0].name
+  }
+  updateCurrentUserData(updatedUser)
 
   // localStorage.setItem(currentUser.nickName, JSON.stringify({ ...currentUser, imageUrl: newAvatarImage }))
   // при деструктуризации теряю реактивность?
-  localStorage.setItem(
-    currentUser.nickName,
-    JSON.stringify({
-      nickName: currentUser.nickName,
-      password: currentUser.password,
-      imageUrl: newAvatarImage
-    })
-  )
+  // localStorage.setItem(
+  //   currentUser.nickName,
+  //   JSON.stringify({
+  //     nickName: currentUser.nickName,
+  //     password: currentUser.password,
+  //     imageUrl: newAvatarImage
+  //   })
+  // )
+  console.log(currentUser)
+  console.log(updatedUser)
+  localStorage.setItem(currentUser.nickName, JSON.stringify(updatedUser))
 }
 
 const createAnswer = (message) => {
@@ -73,7 +79,8 @@ const onSendMessage = () => {
       </div>
       <div class="chat__friends-list list-friends">
         <search-friend-panel @searchFriend="onSearchFriend" class="list-friends__search-panel" />
-        <search-friend-list @friend-click="onFriendClick" :friendList="friendList" />
+        <search-friend-list @friend-click="currentUser.value = $event" :friendList="friendList" />
+        <pre>{{friendList}}</pre>
       </div>
     </div>
     <div v-if="chosenFriend" class="chat__content content-chat">
@@ -88,6 +95,7 @@ const onSendMessage = () => {
         :messagesHistoryList="chosenFriend.messages.history"
       />
       <div class="content-chat__send-block">
+        {{currentUser}}
         <textarea
           v-model="message"
           placeholder="Enter message..."

@@ -1,17 +1,12 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import { reactive, provide } from 'vue'
+import { ref, provide } from 'vue'
 
-const currentUser = reactive({
-  nickName: '',
-  password: '',
-  imageUrl: ''
-})
+const currentUser = ref({})
 
-const updateCurrentUserData = (name, password, imgUrl) => {
-  currentUser.nickName = name
-  currentUser.password = password
-  currentUser.imageUrl = imgUrl
+const updateCurrentUserData = (user) => {
+  console.log(user)
+  currentUser.value = user
 }
 
 provide('currentUser', { updateCurrentUserData, currentUser })
@@ -21,4 +16,3 @@ provide('currentUser', { updateCurrentUserData, currentUser })
   <router-view />
 </template>
 
-<style scoped></style>
